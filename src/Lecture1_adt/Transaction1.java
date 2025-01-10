@@ -7,6 +7,7 @@ import java.util.Calendar;
  * 1. Representation Independence: --- Changes in representation of the data may require external code to alter access
  * 2. Preservation of Invariants: --- Any external client code can alter the internal values
  */
+
 public class Transaction1 {
     public int amount;
     public Calendar date;
