@@ -1,8 +1,16 @@
+/**
+Overview:
+ * The Main class demonstrates the functionality of the BankAccount, 
+ * DepositTransaction, and WithdrawalTransaction classes. It applies a 
+ * sequence of transactions, including deposits, withdrawals, and reversals, 
+ * and handles exceptions for insufficient funds.
+    **/
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Main {
     public static void main(String[] args) {
+         // Initialize a bank account with a balance of 1000
         BankAccount ba = new BankAccount(1000);
 
         // Deposit Transaction
@@ -24,9 +32,9 @@ public class Main {
         // Testing Exception Handling
         try {
             WithdrawalTransaction largeWithdrawal = new WithdrawalTransaction(2000, new GregorianCalendar(2023, Calendar.MARCH, 27), "TX1003");
-            largeWithdrawal.apply(ba);
+            largeWithdrawal.apply(ba); // This should throw an InsufficientFundsException
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());// Print the exception message
         }
 
         System.out.println("Final Balance after attempted large withdrawal: " + ba.getBalance());
